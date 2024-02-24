@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    <table>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Balance
+                <span class="badge bg-primary rounded-pill d-inline-block">{{ budget }}</span>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Total Value
+                <span class="badge bg-primary rounded-pill d-inline-block">{{ total_value }}</span>
+            </li>
+        </ul>
+        <br>
+        <h1>Transactions History</h1>
+        <hr>
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Transaction Type</th>
+                <th>Symbol</th>
+                <th>Price</th>
+                <th>Shares</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        {% if rows %}
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row.timestamp }}</td>
+                        <td>{{ row.transaction_type }}</td>
+                        <td>{{ row.symbol }}</td>
+                        <td>${{ '%.2f' | format(row.price) }}</td>
+                        {% if row.transaction_type == "Sale" %}
+                            <td>-{{ row.shares }}</td>
+                            <td style="color: green">+${{ '%.2f' | format(row.total) }}</td>
+                        {% elif row.transaction_type == "Purchase" %}
+                            <td>+{{ row.shares }}</td>
+                            <td style="color: red">-${{ '%.2f' | format(row.total) }}</td>
+                        {% endif %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        {% else %}
+            <br>
+            <tbody>
+                <tr>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td class="nothing" colspan="6" style="text-align: center;">Nothing here yet.</td>
+                </tr>
+            </tbody>
+        {% endif %}
+    </table>
+{% endblock %}

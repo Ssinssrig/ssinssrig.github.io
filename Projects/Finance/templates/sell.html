@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Sell
+{% endblock %}
+
+{% block main %}
+    <h2>Sell a Stock</h2>
+    <hr>
+    <form action="/sell" method="post">
+        <div class="mb-3">
+            <select class="mx-auto" id="symbol" name="symbol">
+                <option>Select Symbol</option>
+                {% for row in rows %}
+                    <option value="{{ row.symbol }}">{{ row.symbol }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <input min="0" autocomplete="off" autofocus required class="form-control mx-auto w-auto" id="shares" name="shares" placeholder="Amount" type="number">
+        </div>
+        <button class="btn btn-primary" type="submit">Sell</button>
+    </form>
+    <br>
+    <table>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Balance
+                <span class="badge bg-primary rounded-pill d-inline-block">{{ budget }}</span>
+            </li>
+        </ul>
+        <hr>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>Shares Value</th>
+            </tr>
+        </thead>
+        {% if rows %}
+            <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row.symbol }}</td>
+                        <td>{{ row.total_shares }}</td>
+                        <td>${{ '%.2f' | format(row.price) }}</td>
+                        <td>${{ '%.2f' | format(row.shares_value) }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        {% else %}
+            <br>
+            <tbody>
+                <tr>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                    <td>—</td>
+                </tr>
+                <tr>
+                    <td class="nothing" colspan="4" style="text-align: center;">Nothing here yet.</td>
+                </tr>
+        {% endif %}
+    </table>
+{% endblock %}

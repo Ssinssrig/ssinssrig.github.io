@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+    <h2>Input a Stock Quote</h2>
+    <hr>
+    <form action="/quote" method="post">
+        <div class="mb-3">
+        <!--<label for="symbol">Symbol</label>-->
+            <input autocomplete="off" autofocus required class="form-control mx-auto w-auto upper" id="symbol" name="symbol" placeholder="Symbol" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Get Quote</button>
+    </form>
+    {% if quoted %}
+        <hr>
+        <table class="compact">
+            <tbody>
+                <tr>
+                    <td>Symbol: </td>
+                    <td>{{ quoted['symbol'] }}</td>
+                </tr>
+                <tr>
+                    <td>Price: </td>
+                    <td>${{ '%.2f' | format(quoted['price']) }}</td>
+                </tr>
+            </tbody>
+        </table>
+    {% elif quoted == "None" %}
+        <hr>
+        <h2>None</h2>
+    {% endif %}
+{% endblock %}

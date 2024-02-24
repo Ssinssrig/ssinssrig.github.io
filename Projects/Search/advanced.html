@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width">
+        <!--!◄■■■■■■■■■■■■■■■■■■■■■■■■■■■■► IMPORTING DATA ◄■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■►!-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+            crossorigin="anonymous"></script>
+        <link href="https://www.google.com/images/branding/googleg/1x/googleg_standard_color_128dp.png" rel="icon">
+        <link href="styles.css" rel="stylesheet">
+        <!--!◄■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■_________■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■►!-->
+        <title>Advanced Search</title>
+    </head>
+<body>
+    <div class="header">
+        <div class="header_advanced_logo">
+            <a href="index.html">
+                <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png" alt="Google logo" />
+            </a>
+        </div>
+        <div class="header_links">
+            <a href="index.html">Google Search</a>
+            <a href="advanced.html" style="margin-right: 1vw">Advanced Search</a>
+        </div>
+    </div>
+
+    <div class="appbar">
+        <p>Advanced Search</p>
+    </div>
+    <hr>
+    <div class="advanced_container">
+        <form action="https://www.google.com/search" method="get">
+            <div class="advanced_row">
+                <p style="font-size: 16px">Find pages with...</p>
+                <div style="width: 40%;"></div>
+                <p style="width: 20%; font-size: 16px">To do this in the search box</p>
+            </div>
+            <div class="advanced_row">
+                <p>all these words:</p>
+                <input type="text" name="as_q">
+                <div class="example">
+                    Type the important words: <span class="monospace">tri-colour rat terrier</span>
+                </div>
+            </div>
+            <div class="advanced_row">
+                <p>this exact word or phrase:</p>
+                <input type="text" name="as_epq">
+                <div class="example">
+                    Put exact words in quotes: <span class="monospace">"rat terrier"</span>
+                </div>
+            </div>
+            <div class="advanced_row">
+                <p>any of these words: </p>
+                <input type="text" name="as_oq">
+                <div class="example">
+                    Type OR between all the words you want: <span class="monospace">miniature OR standard</span>
+            </div>
+            </div>
+            <div class="advanced_row">
+                <p>none of these words:</p>
+                <input type="text" name="as_eq">
+                <div class="example">
+                    Put a minus sign just before words that you don't want: <span class="monospace">-rodent, -"Jack Russell"</span>
+            </div>
+            </div>
+            <div class="advanced_row">
+                <p></p>
+                <div style="width: 40%">
+                    <input type="submit" class="blue_btn" value="Advanced Search">
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Cash
+{% endblock %}
+
+{% block main %}
+    <h2>Add Cash</h2>
+    <table>
+        <ul class="list-group">
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                Balance
+                <span class="badge bg-primary rounded-pill d-inline-block">{{ budget }}</span>
+            </li>
+        </ul>
+    </table>
+    <hr>
+    <form action="/add_cash" method="post" onsubmit="return validateExpiration()">
+        <div class="mb-3">
+            <input min="0" autocomplete="off" required class="form-control mx-auto w-auto" id="cash" name="cash" placeholder="Amount USD" type="number">
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <p>Cardholder Name</p>
+                <input required class="form-control card mx-auto w-auto" id="cardholder" name="cardholder" placeholder="Cardholder Name" minlength="4" maxlength="32">
+            </div>
+            <div class="col-md-6 mb-3">
+                <p>Credit Card Number</p>
+                <input required class="form-control card mx-auto w-auto" id="ccn" name="ccn" placeholder="Credit Card Number" minlength="13" maxlength="16">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <p>Expiration Date</p>
+                <input required class="form-control mx-auto" id="expiration" name="expiration" placeholder="MM/YY" type="text">
+            </div>
+            <div class="col-md-6 mb-3">
+                <p>Security Code</p>
+                <input autocomplete="off" required class="form-control mx-auto" id="code" name="code" placeholder="Code" type="password" minlength="3" maxlength="4">
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit">Add Cash</button>
+    </form>
+    <br>
+{% endblock %}

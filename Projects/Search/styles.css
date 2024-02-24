@@ -1,0 +1,252 @@
+@charset "UTF-8";
+body {
+  margin: 0px;
+  height: 70vh;
+  font-family: Arial, sans-serif;
+}
+
+input {
+  font-size: 16px;
+  width: 300px;
+}
+input#search_btn, input#lucky_btn {
+  width: 135px;
+  height: 35px;
+}
+input[type=submit] {
+  background-color: #f8f9fa;
+  font-size: 14px;
+  border-width: 0px;
+  border-radius: 5px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+input[type=submit]:hover {
+  box-shadow: 0 0 3px rgba(32, 33, 36, 0.28);
+}
+input.blue_btn {
+  background-color: #357ae8;
+  border: 1px solid #2f5bb7;
+  border-radius: 2px;
+  font-size: 11px;
+  font-weight: bold;
+  color: white;
+  float: right;
+  margin: 0;
+  height: 35px;
+  width: 135px;
+  max-width: 200px;
+}
+
+.header, .header_links, .header_advanced_logo {
+  display: flex;
+  margin-top: 1vh;
+}
+.header a, .header_links a, .header_advanced_logo a {
+  color: black;
+  padding: 10px;
+  text-decoration: none;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+}
+.header a:hover, .header_links a:hover, .header_advanced_logo a:hover {
+  text-decoration: underline;
+}
+.header_advanced_logo {
+  padding: 10px;
+  margin-top: 0;
+}
+.header_advanced_logo img {
+  height: 25px;
+}
+.header_links {
+  margin-left: auto;
+}
+
+.main_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 90%;
+}
+
+.advanced_container {
+  margin: 50px 40px;
+}
+.advanced_container .advanced_row {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+.advanced_container .advanced_row .example {
+  font-size: 11px;
+  width: 30%;
+  margin-left: 1%;
+}
+.advanced_container .advanced_row .example .monospace {
+  font-family: monospace;
+}
+.advanced_container .advanced_row input[type=text] {
+  width: 40%;
+  padding: 2px 0;
+}
+.advanced_container .advanced_row p {
+  width: 12%;
+  font-size: 13px;
+}
+
+.appbar {
+  color: #d93025;
+  font-size: 20px;
+  margin: 35px 35px;
+}
+
+.input-0 {
+  flex: 1;
+  display: flex; /*    */
+  padding: 5px 8px 0 14px;
+}
+
+.input-1 {
+  display: flex;
+  position: relative;
+  min-height: 44px;
+  background: #fff;
+  border: 1px solid #dfe1e5;
+  border-radius: 24px;
+  box-shadow: none;
+  margin: 0 auto;
+  z-index: 3;
+}
+.input-1:hover {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+.input-1:focus-within {
+  box-shadow: 0 1px 6px rgba(32, 33, 36, 0.28);
+}
+
+textarea.search-1 {
+  white-space: pre-line;
+  overflow-y: auto;
+}
+
+.input-align {
+  display: flex;
+  flex: 1;
+  margin-top: 6px;
+}
+
+.input-icon-1 {
+  padding-right: 4px;
+}
+
+.lens-0 {
+  margin: auto;
+}
+
+.lens-1 {
+  margin-top: 3px;
+  color: #9aa0a6;
+}
+
+.lens-2 { /* REQUIRED */
+  display: inline-block;
+  position: relative;
+  fill: currentColor;
+  height: 24px;
+  line-height: 24px;
+  width: 24px;
+}
+
+.lens-3 {
+  display: flex;
+  align-items: center;
+  padding-right: 13px;
+  margin-top: -5px;
+  height: 46px;
+}
+
+/*———————————————————————————————————————————————————————————————————————————————*/
+.search-0 {
+  color: transparent;
+  white-space: pre;
+  position: absolute;
+  pointer-events: none;
+}
+
+.search-1 {
+  resize: none;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.87);
+  outline: none;
+  display: flex;
+  tap-highlight-color: transparent;
+}
+
+.search-1, .search-0 {
+  line-height: 34px;
+  font-size: 16px;
+  flex: 100%;
+}
+
+textarea.search-1, .search-0 {
+  font-family: arial, sans-serif;
+  line-height: 22px;
+  margin-bottom: 8px;
+  overflow-x: hidden;
+}
+
+.container_icons {
+  display: flex;
+  flex: 0 0 auto;
+  margin-top: -5px;
+  align-items: stretch;
+  flex-direction: row;
+  height: 44px;
+}
+
+.microphone-0 {
+  flex: 1 0 auto;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.camera-0 {
+  flex: 1 0 auto;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  border: 0;
+  background: transparent;
+  outline: none;
+  padding: 0 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.blue_text {
+  position: absolute;
+  color: #4285f4;
+  font: 16px/16px roboto-regular, arial, sans-serif;
+  top: 34vh;
+  left: 55vw;
+}/*# sourceMappingURL=styles.css.map */
